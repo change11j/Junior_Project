@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+    
+<body>
+    <button id="toggleButton">點擊切換</button>
+    <div id="element" style="display: none;">這是要切換的元素</div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const element = document.getElementById('element');
+        let clickCount = 0;
+
+        toggleButton.addEventListener('click', function () {
+            clickCount++;
+            if (clickCount > 9) {
+                element.style.display = 'block';
+                setTimeout(function () {
+                    element.style.opacity = 1;
+                }, 10); // 添加一個微小的延遲以確保過渡效果能夠正常應用
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
