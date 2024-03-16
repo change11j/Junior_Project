@@ -1,51 +1,60 @@
 var clickCount = 0;
-var istrible = false;
-var gButton = document.getElementById("gButton");
-console.log(gButton);
-gButton.addEventListener("click",generate);
-gButton.addEventListener("click",shopShow);
+var isTriple = false;
+var isQuintuple = false;
+
+gButton.addEventListener("click", generate);
+gButton.addEventListener("click", shopShow);
+triButton.addEventListener("click", triple);
+
+quintButton.addEventListener("click", quintuple);
 
 
 
 function generate() {
-    if(istrible){
-        clickCount+=3;
-        
-        playFallAudio();
+  
+   if (isQuintuple) {
+     clickCount += 5;
+     playFallAudio();
+   } else if (isTriple) {
+     clickCount += 3;
 
-    }else {
-        clickCount++;
-        playFallAudio();
-
+     playFallAudio();
+   } else {
+     clickCount++;
+     playFallAudio();
+   }
+  meritAmt.innerHTML = clickCount;
+  // if(meritAmt.innerHTML>=10){
+  //     shopShow();
+  // }
+  if (meritAmt.innerHTML >= 100&&!isTriple) {
+    triButton.disabled = false;
     }
-    document.getElementById("meritAmt").innerHTML = clickCount;
-    // if(document.getElementById("meritAmt").innerHTML>=10){
-    //     shopShow();
-    // }
-    if(document.getElementById("meritAmt").innerHTML>=100){
-        document.getElementById("tributton").disabled = false;
+    if (meritAmt.innerHTML>=500&&!isQuintuple) {
+        quintButton.disabled = false;
     }
 }
 //addeventlistener
 
-
-
-
-function triblize() {
-    istrible = true;
-    document.getElementById("tributton").disabled =true;
+function triple() {
+  isTriple = true;
+  triButton.disabled = true;
 }
-function shopShow(){
-    var shopD=document.getElementById("shop");
-    if (clickCount>9) {
-        shopD.classList.remove('hidden');
-        shopD.classList.add('visible');
-        
-    }
+function quintuple() {
+    isQuintuple = true;
+    quintButton.disabled = true;
+}
+// ! 要再修改
+// TODO 再修改
+function shopShow() {
+  if (clickCount > 9) {
+    shop.classList.remove("hidden");
+    shop.classList.add("visible");
+  }
 }
 
 function playFallAudio() {
-    const audio = document.createElement("audio");
-    audio.src="../sounds/fall.mp3";
-    audio.play();
+  const audio = document.createElement("audio");
+  audio.src = "../sounds/fall.mp3";
+  audio.play();
 }

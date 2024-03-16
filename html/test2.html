@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Tom Chang" />
+
+    <title>Test2</title>
+    <style>
+      /* --------------------reset css */
+
+      /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+
+      /* HTML5 display-role reset for older browsers */
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+
+      body {
+        line-height: 1;
+      }
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      blockquote,
+      q {
+        quotes: none;
+      }
+
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      /* ________________ reset csss*/
+
+      /* ----------開始 */
+      .click {
+        margin: 50px;
+      }
+      body {
+      }
+
+      .container {
+        color: rgb(226, 196, 141);
+        background: url(../images/backgroud.png) center no-repeat;
+        background-size: cover;
+      }
+
+      .meritDisplay {
+        text-align: center;
+      }
+
+      .hidden {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 2s linear 2, opacity 2s ease; /* 延遲visibility的過渡效果 */
+      }
+
+      .visible {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* .shop:hover {
+    display: block;
+} */
+
+      /* table */
+      /* 過大會撐開表格 */
+      table img {
+        width: 50%;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      table {
+        width: 100%;
+      }
+      caption {
+        width: 100%;
+        text-align: center;
+      }
+      td {
+        width: 20px;
+      }
+
+      /* col 設定 */
+      .col-1,
+      .col-2,
+      .col-3,
+      .col-4,
+      .col-5,
+      .col-6,
+      .col-7,
+      .col-8,
+      .col-9,
+      .col-10,
+      .col-11,
+      .col-12 {
+        padding: 10px;
+      }
+
+      .col-1 {
+        width: 8.3333333%;
+      }
+
+      .col-2 {
+        width: 16.66666667%;
+      }
+
+      .col-3 {
+        width: 25%;
+      }
+
+      .col-4 {
+        width: 33.33333333%;
+      }
+
+      .col-5 {
+        width: 41.66666667%;
+      }
+
+      .col-6 {
+        width: 50%;
+      }
+
+      .col-7 {
+        width: 58.33333333%;
+      }
+
+      .col-8 {
+        width: 66.66666667%;
+      }
+
+      .col-9 {
+        width: 75%;
+      }
+
+      .col-10 {
+        width: 83.33333333%;
+      }
+
+      .col-11 {
+        width: 91.666667%;
+      }
+
+      .col-12 {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="../images/tittle.png" alt="" />
+    </header>
+    <div class="container">
+      <div>
+        <table class="meritDisplay">
+          <thead>
+            <th>功德無量系統</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-6">累積功德量</td>
+              <td class="col-6" id="meritAmt"></td>
+            </tr>
+            <tr>
+              <td class="col-6">每秒功德產生量</td>
+              <td class="col-6"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="click">
+        <button id="gButton">馬上放生</button>
+      </div>
+      <div class="shop hidden" id="shop">
+        <table>
+          <caption>
+            瓷器功德商店
+          </caption>
+          <thead>
+            <th class="col-2">品項</th>
+            <th class="col-4" colspan="2">說明</th>
+            <th class="col-2">目前等級</th>
+            <th class="col-2">升級所需功德</th>
+            <th class="col-2">升級</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-2">放生三連擊</td>
+              <td class="col-4" colspan="2">
+                如同AK-47半自動模式，使您點擊一次放生三條魚，放生三倍速
+              </td>
+              <td class="col-2"></td>
+              <td class="col-2"></td>
+              <td class="col-2">
+                <button id="tributton" onclick="triblize()" disabled>
+                  升級
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-2">放生五連擊</td>
+              <td class="col-4" colspan="2">
+                放生五倍速，一次放生，五倍的快樂
+              </td>
+              <td class="col-2"></td>
+              <td class="col-2"></td>
+              <td class="col-2"><button>升級</button></td>
+            </tr>
+            <tr>
+              <td class="col-2">放生永動機</td>
+              <td class="col-4" colspan="2"><img src="../images/mFD.jpg" /></td>
+              <td class="col-2"></td>
+              <td class="col-2"></td>
+              <td class="col-2"><button>購買</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <p>&copy;張彥瑋 Tom Chnag</p>
+      </div>
+    </footer>
+    <script>
+      var clickCount = 0;
+      var isTriple = false;
+      while (true) {
+         if (meritAmt.innerHTML >=100&&  !isTriple) {
+            triplize;
+        }
+        gButton.addEventListener("click", generate);
+        gButton.addEventListener("click", shopShow);
+        break;
+        
+      }
+      function main() {
+        
+      }
+
+
+      function generate() {
+          if(isTriple){
+            clickCount+=3;
+          }
+          clickCount++;
+          playFallAudio();
+        
+        meritAmt.innerHTML = clickCount;
+        
+       
+      }
+
+      function triplize() {
+        isTripled = true;
+        triButton.disabled = false;
+      }
+
+      // ! 要再修改
+      // TODO 再修改
+      function shopShow() {
+        if (clickCount > 9) {
+          shop.classList.remove("hidden");
+          shop.classList.add("visible");
+        }
+      }
+
+      function playFallAudio() {
+        const audio = document.createElement("audio");
+        audio.src = "../sounds/fall.mp3";
+        audio.play();
+      }
+    </script>
+  </body>
+</html>

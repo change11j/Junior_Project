@@ -1,91 +1,96 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Tom Chang">
-    <link rel="stylesheet" href="../css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Tom Chang" />
+    <link rel="stylesheet" href="../css/style.css" />
 
     <title>功德無量系統</title>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
-        <img src="../images/tittle.png" alt="">
+      <img src="../images/tittle.png" alt="" />
     </header>
     <div class="container">
-        <div>
-            <table class="meritDisplay">
-
-                <thead>
-                    <th>功德無量系統</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-6">累積功德量</td>
-                        <td class="col-6" id="meritAmt"></td>
-                    </tr>
-                    <tr>
-                        <td class="col-6">每秒功德產生量</td>
-                        <td class="col-6"></td>
-                    </tr>
-                </tbody>
-
-            </table>
-        </div>
-        <div class="click">
-            <button id="gButton">馬上放生</button>
-        </div>
-        <div class="shop hidden" id="shop">
-            <table>
-                <caption>瓷器功德商店</caption>
-                <thead>
-                    <th class="col-2">品項</th>
-                    <th class="col-4" colspan="2">說明</th>
-                    <th class="col-2">目前等級</th>
-                    <th class="col-2">升級所需功德</th>
-                    <th class="col-2">升級</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-2">放生三連擊</td>
-                        <td class="col-4" colspan="2">如同AK-47半自動模式，使您點擊一次放生三條魚，放生三倍速</td>
-                        <td class="col-2"></td>
-                        <td class="col-2"></td>
-                        <td class="col-2"><button id="tributton" onclick="triblize()" disabled>升級</button></td>
-                    </tr>
-                    <tr>
-                        <td class="col-2">放生五連擊</td>
-                        <td class="col-4" colspan="2">放生五倍速，一次放生，五倍的快樂</td>
-                        <td class="col-2"></td>
-                        <td class="col-2"></td>
-                        <td class="col-2"><button>升級</button></td>
-                    </tr>
-                    <tr>
-                        <td class="col-2">放生永動機</td>
-                        <td class="col-4" colspan="2"><img src="../images/mFD.jpg"></td>
-                        <td class="col-2"></td>
-                        <td class="col-2"></td>
-                        <td class="col-2"><button>購買</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      <div>
+        <table class="meritDisplay">
+          <thead>
+            <th>功德無量系統</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-6">累積功德量</td>
+              <td class="col-6" id="meritAmt"></td>
+            </tr>
+            <tr>
+              <td class="col-6">每秒功德產生量</td>
+              <td class="col-6"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="click">
+        <button id="gButton" >馬上放生</button>
+      </div>
+      <div class="shop hidden" id="shop">
+        <table>
+          <caption>
+            瓷器功德商店
+          </caption>
+          <thead>
+            <th class="col-2">品項</th>
+            <th class="col-4" colspan="2">說明</th>
+            <th class="col-2">目前等級</th>
+            <th class="col-2">升級所需功德</th>
+            <th class="col-2">升級</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-2">放生三連擊</td>
+              <td class="col-4" colspan="2">
+                如同AK-47半自動模式，使您點擊一次放生三條魚，放生三倍速
+              </td>
+              <td class="col-2"></td>
+              <td class="col-2"></td>
+              <td class="col-2">
+                <button id="triButton" disabled>
+                  升級
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-2">放生五連擊</td>
+              <td class="col-4" colspan="2">
+                放生五倍速，一次放生，五倍的快樂
+              </td>
+              <td class="col-2"></td>
+              <td class="col-2"></td>
+              <td class="col-2" ><button id="quintButton" disabled>升級</button></td>
+            </tr>
+            <tr>
+              <td class="col-2">放生永動機</td>
+              <td class="col-4" colspan="2"><img src="../images/mFD.jpg" /></td>
+              <td class="col-2"></td>
+              <td class="col-2"></td>
+              <td class="col-2"><button>購買</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <footer>
-        <div>
-            <p>
-                &copy;張彥瑋 Tom Chnag
-            </p>
-        </div>
+      <div>
+        <p>&copy;張彥瑋 Tom Chnag</p>
+      </div>
     </footer>
     <script src="../javascript/meritJs.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
 </html>
