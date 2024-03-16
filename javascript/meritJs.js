@@ -1,29 +1,27 @@
-var clickCount = 0;
 var isTriple = false;
 var isQuintuple = false;
+var meritAmtValue= Number(meritAmt.innerHTML);
 
+carnivore();
 gButton.addEventListener("click", generate);
 gButton.addEventListener("click", shopShow);
 triButton.addEventListener("click", triple);
 
 quintButton.addEventListener("click", quintuple);
-
-
-
 function generate() {
   
    if (isQuintuple) {
-     clickCount += 5;
+     meritAmt.innerHTML += 5;
      playFallAudio();
    } else if (isTriple) {
-     clickCount += 3;
+     meritAmt.innerHTML += 3;
 
      playFallAudio();
    } else {
-     clickCount++;
+     meritAmt.innerHTML++;
      playFallAudio();
-   }
-  meritAmt.innerHTML = clickCount;
+  }
+  
   // if(meritAmt.innerHTML>=10){
   //     shopShow();
   // }
@@ -34,7 +32,12 @@ function generate() {
         quintButton.disabled = false;
     }
 }
-//addeventlistener
+function carnivore() {
+  var timeId = window.setInterval(() => --meritAmt.innerHTML
+    
+    , 1000);
+  return timeId;
+}
 
 function triple() {
   isTriple = true;
