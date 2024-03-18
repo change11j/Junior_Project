@@ -14,19 +14,33 @@
       <div class="formContainer">
         <form id="infoForm">
           <label for="name">暱稱</label>
-          <br>
-          <input type="text" name="name" id="name" required>
+          <br />
+          <input type="text" name="name" id="name" required />
           <label for="foodDisc"></label>
-          <br>
-          <label for="foodDisc">飲食習慣</label>
-            <br>
+          <br />
+          <br />
+
+          <label for="modeSelect">模式</label>
+          <br />
+
+          <select name="modeSelect" id="modeSelect">
+            <option selected disabled>請選擇模式</option>
+            <option value="person">人模式</option>
+
+            <option value="cat">貓貓模式</option>
+          </select>
+          <br />
+          <div id="modeDisp">
+            <label for="foodDisc">飲食習慣</label>
+            <br />
             <select name="foodDisc" id="foodDisc" required>
               <option selected disabled>請選擇你的飲食習慣</option>
               <option value="carn">吃葷</option>
               <option value="veg">吃素</option>
             </select>
-            <br>
-          <input type="submit" value="開始遊戲">
+          </div>
+          <br />
+          <input type="submit" value="開始遊戲" />
         </form>
       </div>
     </div>
@@ -47,13 +61,13 @@
               </tr>
               <tr>
                 <td class="col-6">每秒功德產生量</td>
-                <td class="col-6"></td>
+                <td class="col-6" id="autoMerit"></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="click">
-          <button id="gButton" >馬上放生</button>
+        <div class="clickArea" id="clickArea">
+          <button id="gButton">馬上放生</button>
         </div>
         <div class="shop hidden" id="shop">
           <table>
@@ -74,11 +88,9 @@
                   如同AK-47半自動模式，使您點擊一次放生三條魚，放生三倍速
                 </td>
                 <td class="col-2"></td>
-                <td class="col-2"></td>
+                <td class="col-2">300</td>
                 <td class="col-2">
-                  <button id="triButton" disabled>
-                    升級
-                  </button>
+                  <button id="triButton" disabled>升級</button>
                 </td>
               </tr>
               <tr>
@@ -87,21 +99,27 @@
                   放生五倍速，一次放生，五倍的快樂
                 </td>
                 <td class="col-2"></td>
-                <td class="col-2"></td>
-                <td class="col-2" ><button id="quintButton" disabled>升級</button></td>
+                <td class="col-2">500</td>
+                <td class="col-2">
+                  <button id="quintButton" disabled>升級</button>
+                </td>
               </tr>
               <tr>
                 <td class="col-2">南無加特林菩薩</td>
                 <td class="col-4" colspan="2">
                   六根清凈貧鈾彈， 一息三千六百轉， 大慈大悲渡世人
                 </td>
-                <td class="col-2"></td>
-                <td class="col-2"></td>
-                <td class="col-2" ><button id="gatlButton" disabled>升級</button></td>
+                <td class="col-2" id="galtNumDisp">0</td>
+                <td class="col-2" id="galtCostValue">1000</td>
+                <td class="col-2">
+                  <button id="gatlButton" disabled>升級</button>
+                </td>
               </tr>
               <tr>
                 <td class="col-2">放生永動機</td>
-                <td class="col-4" colspan="2"><img src="../images/mFD.jpg" /></td>
+                <td class="col-4" colspan="2">
+                  <img src="../images/mFD.jpg" />
+                </td>
                 <td class="col-2"></td>
                 <td class="col-2"></td>
                 <td class="col-2"><button>購買</button></td>
@@ -111,13 +129,12 @@
         </div>
       </div>
       <footer>
-        <div> 
+        <div>
           <p>&copy;張彥瑋 Tom Chnag</p>
         </div>
       </footer>
     </div>
     <script src="../javascript/meritJs.js"></script>
     <!-- <script src="../javascript/test.js"></script> -->
-    
   </body>
 </html>

@@ -73,6 +73,9 @@ table {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   /*todo text-align: center ; */
 }
+#modeDisp{
+  display: none;
+}
 
 
 .mainContent{
@@ -109,7 +112,7 @@ table {
 
 #gButton {
 }
-.click {
+.clickArea {
   overflow: hidden;
   text-align: center;
 }
