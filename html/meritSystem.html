@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Tom Chang" />
     <link rel="stylesheet" href="../css/style.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Hina+Mincho&family=Kaisei+Decol&family=New+Tegomin&family=Yuji+Boku&display=swap" rel="stylesheet">
     <title>功德無量系統</title>
   </head>
 
@@ -45,34 +53,22 @@
       </div>
     </div>
     <div class="mainContent">
-      <header>
-        <img src="../images/tittle.png" alt="" />
-      </header>
       <div id="animateField">
+        <h1>功德永動機</h1>
+        <img src="../images/extends-is-picture (2).png" alt="" />
+        <img src="../images/extends-is-picture (1).png" alt="" />
+        <span id="meritDisplay">累積功德量</span>
+        <span id="meritAmt">0</span>
+        <span id="autoMDisplay">每秒功德產生量</span>
+        <span id="autoMerit">-</span>
       </div>
       <div class="container">
-        <div>
-          <table class="meritDisplay">
-            <thead>
-              <th>功德無量系統</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="col-6">累積功德量</td>
-                <td class="col-6" id="meritAmt"></td>
-              </tr>
-              <tr>
-                <td class="col-6">每秒功德產生量</td>
-                <td class="col-6" id="autoMerit"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        
         <div class="clickArea" id="clickArea">
           <button id="gButton">馬上放生</button>
         </div>
-        <div class="shop hidden" id="shop">
-          <table>
+        <div  id="shop">
+          <table id="shopTable">
             <caption>
               瓷器功德商店
             </caption>
@@ -120,15 +116,23 @@
               <tr>
                 <td class="col-2">放生永動機</td>
                 <td class="col-4" colspan="2">
-                  <img src="../images/mFD.jpg" />
+                  <img src="../images/mFD-1.png (2).png" />
                 </td>
                 <td class="col-2" id="meritNumDisp">0</td>
                 <td class="col-2" id="meritCosVal">100000</td>
-                <td class="col-2" ><button id="forButton" disabled>購買</button></td>
+                <td class="col-2">
+                  <button id="forButton" disabled>購買</button>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
+      </div>
+      <div id="tag">
+
+      </div>
+      <div id="shopTag">
+        商店
       </div>
       <footer>
         <div>

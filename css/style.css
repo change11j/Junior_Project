@@ -3,64 +3,251 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 /* *--------------------------------開始-------------------------------- */
 /** ----------------------------------------------------------------*/
 /* *                              動畫開始
- * ---------------------------------------------------------------- */
-#animateField{
+ * ---------------------------------------------------------------- */ㄔ
+ html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+ }
+#animateField {
   position: relative;
-  width: 100%;
-  height: 400px;
-overflow: hidden;
 
+  width: 100%;
+  height: 570px;
+  overflow: hidden;
 }
 
+#animateField img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#animateField h1 {
+  position: absolute;
+  z-index: 100;
+  font-size: 60px;
+  font-family: "Yuji Boku", serif;
+  font-weight: 400;
+  font-style: normal;
+  /* width: 100%; */
+  color: rgba(245, 245, 245, 0.914);
+  left: 50%;
+  /* margin-left: -120px; */
 
+  transform: translateX(-50%);
+}
+#meritDisplay {
+  position: absolute;
+  z-index: 100;
+  height: auto;
+  bottom: 40%;
+  font-size: 20px;
+  font-family: "Yuji Boku", serif;
+  font-style: normal;
+  /* width: 100%; */
+  color: rgb(245, 245, 245);
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+#meritAmt {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 100%;
+  color: #ffffffb7;
+  text-align: center;
+  font-size: 10rem;
+  font-family: "Yuji Boku", serif;
 
+}
+#autoMDisplay {
+  position: absolute;
+  z-index: 100;
+  height: auto;
+  bottom: 8%;
+  font-size: 20px;
+  font-family: "Yuji Boku", serif;
+  font-style: normal;
+  /* width: 100%; */
+  color: rgba(245, 245, 245, 0.758);
+  left: 50%;
+  transform: translateX(-50%);
+}
+#autoMerit {
+  position: absolute;
+  z-index: 100;
+  height: auto;
+  bottom: 0;
+  font-size: 40px;
+  font-family: "Yuji Boku", serif;
+  font-style: normal;
+  /* width: 100%; */
+  color: rgba(245, 245, 245, 0.758);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#clickArea {
+  position: relative;
+  height: 350px;
+  width: 100%;
+}
+#gButton {
+  position: absolute;
+  bottom: 10%;
+  height: 50px;
+  width: 200px;
+  left: 43%;
+  /* margin-left: -100px; */
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+#catButton {
+  position: absolute;
+  bottom: 10%;
+  height: 50px;
+  width: 200px;
+  left: 43%;
+  /* margin-left: -100px; */
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
 
 /** ----------------------------------------------------------------*/
 /* *                              動畫結束
@@ -73,37 +260,179 @@ overflow: hidden;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.84);
   z-index: 9999;
   display: none;
 }
 
 .formContainer {
   position: absolute;
-  top: 25%;
+  top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  /*todo height: 200px; */
-  width: 400px;
-  background: #fff;
+  transform: translateX(-50%);
+  /* transform: translate(-50%, -50%); */
+  width: 50%;
+  height: auto;
+  background: #b89c7c;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  /*todo text-align: center ; */
+  /* todo text-align: center ; */
+  /* transition: transform 0.3s ease;  */
+
 }
-#modeDisp{
+.formContainer label {
+  /* position: absolute; */
+  margin-left: 40%;
+
+  /* transform: translateX(-50%); */
+  font-size: 40px;
+  font-family: "New Tegomin", serif;
+}
+.formContainer input {
+  /* position: absolute; */
+  margin: 5% 20%;
+  height: auot;
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #fde8e2;
+  border-radius: 5px;
+  font-size: 30px;
+  transition: transform 0.3s ease;
+  font-family: "New Tegomin", serif;
+  text-align: center;
+
+}
+.formContainer select{
+  margin: 5% 20%;
+  font-family: "New Tegomin", serif;
+  font-size: 30px;
+
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s ease; 
+  padding: 8px; /* 设置内边距 */
+    background-color: #f4f4f4; /* 设置背景颜色 */
+}
+.formContainer option:hover{
+  margin: 5% 20%;
+  font-family: "New Tegomin", serif;
+  font-size: 30px;
+
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  
+}
+.formContainer input:hover,
+.formContainer select:hover {
+  outline: none; /* 阻止默认的焦点边框 */
+    transform: scale(1.1); /* 放大动画效果 */
+}
+#infoForm input[type="submit"]:hover{
+  border: 0;
+  background-color: rgb(90, 208, 255) ;
+  color: white;
+}
+#modeDisp {
   display: none;
 }
 
-
-.mainContent{
+.mainContent {
   /* display: none; */
 }
 
 /* *---------------------------彈窗end---------------------- */
+/* *---------------------------商店彈窗---------------------- */
+#shop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.84);
+  z-index: 9999;
+  display: none;
+}
+#shopTable{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: auto;
+  background: #9c1e37;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  text-align: center ;
+  font-family: "New Tegomin", serif;
+  /* transition: transform 0.3s ease;  */
+}
+
+/* *---------------------------商店彈窗end---------------------- */
+
+/* *---------------------------標籤---------------------- */
+#shopTag{
+position: fixed;
+  top: 1%;
+  left: 1%;
+  height: 100px;
+  width: 250px;
+  background-color: bisque;
+  border-radius: 6px;
+  text-align: center;
+  font-family: "Kaisei Decol", serif;
+  font-size: 40px;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  text-align: center; /* 内部文本水平居中 */
+  cursor: pointer;
+  
+
+
+}
+
+#tag {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  height: 100px;
+  width: 250px;
+  background-color: bisque;
+  border-radius: 6px;
+  text-align: center;
+}
+#tag :first-child {
+  position: relative;
+  top: 30%;
+  font-size: 40px;
+  line-height: 30px;
+  color: black;
+  font-family: "Kaisei Decol", serif;
+
+}
+#tag span {
+  position: relative;
+  top: 30%;
+  font-size: 15px;
+  line-height: 30px;
+  color: black;
+  font-family: "Kaisei Decol", serif;;
+
+}
+
+/* *---------------------------標籤end---------------------- */
+
 header {
   font-size: 0;
-  
 }
 .container {
   color: rgb(226, 196, 141);
@@ -131,33 +460,31 @@ header {
 } */
 /*! -------------------------button --------------------------*/
 
-#gButton {
-}
-.clickArea {
-  overflow: hidden;
-  text-align: center;
-}
-
-
 /* table */
 /* 過大會撐開表格 */
 table img {
+  position: relative;
   width: 50%;
+  bottom: -10px;
 }
 
-img {
-  width: 100%;
-}
 
-table {
+
+/* table {
   width: 100%;
-}
+} */
 caption {
   width: 100%;
   text-align: center;
+  margin-bottom: 40px;
+  font-size: 50px;
 }
 td {
   width: 20px;
+  height:20px ;
+}
+footer{
+  background-color: rgba(0, 0, 0, 0.703);
 }
 
 /**----------------------------- col -------------------------設定 */
