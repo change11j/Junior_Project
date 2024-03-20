@@ -130,12 +130,13 @@ table {
 /* *--------------------------------開始-------------------------------- */
 /** ----------------------------------------------------------------*/
 /* *                              動畫開始
- * ---------------------------------------------------------------- */ㄔ
- html, body {
+ * ---------------------------------------------------------------- */
+ㄔ html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
- }
+}
 #animateField {
   position: relative;
 
@@ -157,9 +158,9 @@ table {
   font-size: 60px;
   font-family: "Yuji Boku", serif;
   font-weight: 400;
+  color: white;
   font-style: normal;
   /* width: 100%; */
-  color: rgba(245, 245, 245, 0.914);
   left: 50%;
   /* margin-left: -120px; */
 
@@ -174,7 +175,6 @@ table {
   font-family: "Yuji Boku", serif;
   font-style: normal;
   /* width: 100%; */
-  color: rgb(245, 245, 245);
   left: 50%;
   transform: translateX(-50%);
 }
@@ -184,11 +184,10 @@ table {
   top: 60%;
   left: 0;
   width: 100%;
-  color: #ffffffb7;
   text-align: center;
+  color: rgb(0, 0, 0) ;
   font-size: 10rem;
   font-family: "Yuji Boku", serif;
-
 }
 #autoMDisplay {
   position: absolute;
@@ -199,7 +198,6 @@ table {
   font-family: "Yuji Boku", serif;
   font-style: normal;
   /* width: 100%; */
-  color: rgba(245, 245, 245, 0.758);
   left: 50%;
   transform: translateX(-50%);
 }
@@ -212,14 +210,13 @@ table {
   font-family: "Yuji Boku", serif;
   font-style: normal;
   /* width: 100%; */
-  color: rgba(245, 245, 245, 0.758);
   left: 50%;
   transform: translateX(-50%);
 }
 
 #clickArea {
   position: relative;
-  height: 350px;
+  height: 200px;
   width: 100%;
 }
 #gButton {
@@ -234,6 +231,11 @@ table {
   font-style: normal;
   font-size: 25px;
   letter-spacing: 3px;
+  background-color: rgb(0, 140, 255);
+  border: 0;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  color: #f4f4f4;
 }
 #catButton {
   position: absolute;
@@ -247,6 +249,23 @@ table {
   font-style: normal;
   font-size: 25px;
   letter-spacing: 3px;
+  background-color: rgb(0, 140, 255);
+  border: 0;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  color: #f4f4f4;
+}
+button {
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  letter-spacing: 3px;
+  /* background-color: rgb(0, 140, 255); */
+  border: 0;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  /* color: #f4f4f4; */
 }
 
 /** ----------------------------------------------------------------*/
@@ -279,7 +298,6 @@ table {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   /* todo text-align: center ; */
   /* transition: transform 0.3s ease;  */
-
 }
 .formContainer label {
   /* position: absolute; */
@@ -301,9 +319,8 @@ table {
   transition: transform 0.3s ease;
   font-family: "New Tegomin", serif;
   text-align: center;
-
 }
-.formContainer select{
+.formContainer select {
   margin: 5% 20%;
   font-family: "New Tegomin", serif;
   font-size: 30px;
@@ -313,11 +330,11 @@ table {
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
   padding: 8px; /* 设置内边距 */
-    background-color: #f4f4f4; /* 设置背景颜色 */
+  background-color: #f4f4f4; /* 设置背景颜色 */
 }
-.formContainer option:hover{
+.formContainer option:hover {
   margin: 5% 20%;
   font-family: "New Tegomin", serif;
   font-size: 30px;
@@ -327,29 +344,24 @@ table {
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: transform 0.3s ease;
-  
 }
 .formContainer input:hover,
 .formContainer select:hover {
   outline: none; /* 阻止默认的焦点边框 */
-    transform: scale(1.1); /* 放大动画效果 */
+  transform: scale(1.1); /* 放大动画效果 */
 }
-#infoForm input[type="submit"]:hover{
+#infoForm input[type="submit"]:hover {
   border: 0;
-  background-color: rgb(90, 208, 255) ;
+  background-color: rgb(90, 208, 255);
   color: white;
 }
 #modeDisp {
   display: none;
 }
 
-.mainContent {
-  /* display: none; */
-}
-
 /* *---------------------------彈窗end---------------------- */
 /* *---------------------------商店彈窗---------------------- */
-#shop{
+#shop {
   position: fixed;
   top: 0;
   left: 0;
@@ -359,7 +371,7 @@ table {
   z-index: 9999;
   display: none;
 }
-#shopTable{
+#shopTable {
   position: absolute;
   top: 10%;
   left: 50%;
@@ -371,20 +383,29 @@ table {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-size: 25px;
-  text-align: center ;
+  text-align: center;
   font-family: "New Tegomin", serif;
   /* transition: transform 0.3s ease;  */
+}
+#shopTable caption {
+  position: relative;
+  width: 35%;
+  left: 50%;
+  margin-left: -20%;
+  margin-bottom: 40px;
+  font-size: 50px;
 }
 
 /* *---------------------------商店彈窗end---------------------- */
 
 /* *---------------------------標籤---------------------- */
-#shopTag{
-position: fixed;
+#shopTag {
+  position: fixed;
   top: 1%;
   left: 1%;
   height: 100px;
   width: 250px;
+  color: rgb(0, 0, 0);
   background-color: bisque;
   border-radius: 6px;
   text-align: center;
@@ -395,9 +416,6 @@ position: fixed;
   align-items: center; /* 垂直居中 */
   text-align: center; /* 内部文本水平居中 */
   cursor: pointer;
-  
-
-
 }
 
 #tag {
@@ -417,7 +435,6 @@ position: fixed;
   line-height: 30px;
   color: black;
   font-family: "Kaisei Decol", serif;
-
 }
 #tag span {
   position: relative;
@@ -425,8 +442,7 @@ position: fixed;
   font-size: 15px;
   line-height: 30px;
   color: black;
-  font-family: "Kaisei Decol", serif;;
-
+  font-family: "Kaisei Decol", serif;
 }
 
 /* *---------------------------標籤end---------------------- */
@@ -459,8 +475,9 @@ header {
     display: block;
 } */
 /*! -------------------------button --------------------------*/
-
-/* table */
+button{
+  cursor: pointer;
+}
 /* 過大會撐開表格 */
 table img {
   position: relative;
@@ -468,22 +485,15 @@ table img {
   bottom: -10px;
 }
 
-
-
 /* table {
   width: 100%;
 } */
-caption {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 50px;
-}
+
 td {
   width: 20px;
-  height:20px ;
+  height: 20px;
 }
-footer{
+footer {
   background-color: rgba(0, 0, 0, 0.703);
 }
 
