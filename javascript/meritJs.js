@@ -168,7 +168,7 @@ var shopObserver = new MutationObserver(function (shopMeritsChange) {
     if (
       shopMeritChange.type === "attributes") {
       console.log(11111);
-      shopRemind([0, 0, 0], [288, 194, 0], new Date().getTime(), 1000);
+      shopRemind([0, 0, 0], [288, 194, 0], new Date().getTime(), 300);
     }
   });
 });
@@ -527,7 +527,7 @@ console.log(colorArr);
     return;
   }
   
-  let ratio = parseInt(meritAmt.innerHTML) / 1000;
+  let ratio = parseInt(meritAmt.innerHTML) / 50;
   let nextColorArr = [];
   if (ratio > 0) {
     for (let i = 0; i < colorArr.length; i++) {
