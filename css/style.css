@@ -137,6 +137,95 @@ body {
   margin: 0;
   padding: 0;
 }
+/* 適用於平板電腦和小型桌面顯示器 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #animateField {
+    height: 400px;
+  }
+
+  #animateField h1 {
+    font-size: 40px;
+  }
+
+  #meritDisplay, #autoMDisplay {
+    font-size: 16px;
+  }
+
+  #meritAmt, #autoMerit {
+    font-size: 6rem;
+  }
+
+  #gButton, #catButton {
+    height: 40px;
+    width: 160px;
+    font-size: 20px;
+  }
+
+  .formContainer {
+    width: 70%;
+  }
+
+  .formContainer label {
+    font-size: 30px;
+  }
+
+  .formContainer input, .formContainer select {
+    font-size: 20px;
+  }
+
+  #shopTable {
+    font-size: 18px;
+  }
+
+  #shopTable caption {
+    font-size: 30px;
+  }
+}
+
+/* 適用於手機和小型裝置 */
+@media (max-width: 767px) {
+  #animateField {
+    height: 300px;
+  }
+
+  #animateField h1 {
+    font-size: 30px;
+  }
+
+  #meritDisplay, #autoMDisplay {
+    font-size: 12px;
+  }
+
+  #meritAmt, #autoMerit {
+    font-size: 4rem;
+  }
+
+  #gButton, #catButton {
+    height: 30px;
+    width: 120px;
+    font-size: 16px;
+  }
+
+  .formContainer {
+    width: 90%;
+  }
+
+  .formContainer label {
+    font-size: 20px;
+  }
+
+  .formContainer input, .formContainer select {
+    font-size: 16px;
+  }
+
+  #shopTable {
+    font-size: 14px;
+  }
+
+  #shopTable caption {
+    font-size: 20px;
+  }
+}
 #animateField {
   position: relative;
 

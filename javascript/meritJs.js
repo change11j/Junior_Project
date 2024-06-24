@@ -11,12 +11,14 @@ var meritForAmt = 1;
 var meritForCost = 1;
 var meritForNum = 0;
 var catTimer = 0;
+var score = parseInt(meritAmt.innerHTML);
+
+console.log(document.cookie);
 
 document.addEventListener("DOMContentLoaded", () => {
   popUp.style.display = "block";
   // shopRemind([0, 0, 0], [288, 194, 0], new Date().getTime(), 1000)();
 });
-
 
 shopTag.addEventListener("click", () => {
   shop.style.display = "block";
@@ -132,7 +134,6 @@ forButton.addEventListener("click", () => {
   meritNumDisp.innerHTML = ++meritForAmt;
 });
 
-
 //* -----------------------------------------------------------------------------
 // *                     按鈕 監聽 功能結束
 //* -------------------------------------------------------------------------
@@ -165,8 +166,7 @@ observer.observe(meritAmt, { childList: true, subtree: true });
 
 var shopObserver = new MutationObserver(function (shopMeritsChange) {
   shopMeritsChange.forEach(function (shopMeritChange) {
-    if (
-      shopMeritChange.type === "attributes") {
+    if (shopMeritChange.type === "attributes") {
       console.log(11111);
       shopRemind([0, 0, 0], [288, 194, 0], new Date().getTime(), 300);
     }
@@ -174,7 +174,7 @@ var shopObserver = new MutationObserver(function (shopMeritsChange) {
 });
 var shopNodes = [triButton, quintButton, gatlButton, forButton];
 shopNodes.forEach(function (shopNode) {
-  shopObserver.observe(shopNode, { attributes:true });
+  shopObserver.observe(shopNode, { attributes: true });
 });
 
 //* -----------------------------------------------------------------------------
@@ -191,8 +191,7 @@ function generate() {
   } else {
     meritAmt.innerHTML++;
   }
-      changeColor([248, 203, 0]);
-
+  changeColor([248, 203, 0]);
 }
 function carnivore() {
   var timeId = window.setInterval(
@@ -224,7 +223,6 @@ function catMode() {
     }
   }
 }
-
 
 //* -----------------------------------------------------------------------------
 // *                     merit 按鈕變化 功能結束
@@ -461,21 +459,18 @@ function shopRemind(
   isFirst = true,
   startColor = null
 ) {
-  
   if (
-
-      triButton.disabled&& 
-      quintButton.disabled&&
-      gatlButton.disabled&&
-      forButton.disabled
-
+    triButton.disabled &&
+    quintButton.disabled &&
+    gatlButton.disabled &&
+    forButton.disabled
   ) {
     cancelAnimationFrame(animationFrameId);
     return;
   }
 
-   startColor = isFirst ? currentColor : startColor;
-  
+  startColor = isFirst ? currentColor : startColor;
+
   let currTime = new Date().getTime();
   let elapsedTime = currTime - startTime;
 
@@ -490,9 +485,15 @@ function shopRemind(
   console.log(shopTag.style.color);
   // 未達到目標顏色前繼續變化
   if (elapsedTime < totalTime) {
-    
-  animationFrameId =requestAnimationFrame(() => {
-      shopRemind(nextColor, targetColor, startTime, totalTime,false,startColor); //注意要用nextColor不然不變化
+    animationFrameId = requestAnimationFrame(() => {
+      shopRemind(
+        nextColor,
+        targetColor,
+        startTime,
+        totalTime,
+        false,
+        startColor
+      ); //注意要用nextColor不然不變化
     });
   } else {
     //完成變化 反覆變化
@@ -511,7 +512,6 @@ function shopRemind(
         startColor
       ); //注意要用nextColor不然不變化
     });
-    
   }
 }
 function changeColor(targetColorArr) {
@@ -522,27 +522,22 @@ function changeColor(targetColorArr) {
   let rgbRegex = /rgb\((\d+),\s*(\d+),\s*(\d+)\)/;
   let matches = colorString.match(rgbRegex); //返回字串第一個為原字串，後續為所有匹配字串
   colorArr = matches.slice(1).map(Number); //  匹配之數值數組
-console.log(colorArr);
+  console.log(colorArr);
   if (colorArr.every((value, index) => value === targetColorArr[index])) {
     return;
   }
-  
+
   let ratio = parseInt(meritAmt.innerHTML) / 50;
   let nextColorArr = [];
   if (ratio > 0) {
     for (let i = 0; i < colorArr.length; i++) {
-       nextColorArr[i]=targetColorArr[i]*ratio;
-      
+      nextColorArr[i] = targetColorArr[i] * ratio;
     }
-    
   }
   meritAmt.style.color = `rgb(${Math.round(nextColorArr[0])},
   ${Math.round(nextColorArr[1])},
   ${Math.round(nextColorArr[2])})`;
 }
-
-  
-
 
 //* -----------------------------------------------------------------------------
 // *                     動畫 控制結束
