@@ -102,7 +102,7 @@ modeSelect.addEventListener("change", (e) => {
 });
 function playFallAudio() {
   const audio = document.createElement("audio");
-  audio.src = "../sounds/fall.mp3";
+  audio.src = "/sounds/fall.mp3";
   audio.play();
 }
 //* -----------------------------------------------------------------------------
@@ -317,9 +317,9 @@ function fallLeft() {
 
   let fish = document.createElement("img");
   if (isWho) {
-    fish.src = "../images/heads-downward.svg";
+    fish.src = "/images/heads-downward.svg";
   } else {
-    fish.src = "../images/a--fish-heads-left.png";
+    fish.src = "/images/a--fish-heads-left.png";
   }
   fish.className = "fish";
   fish.style.height = "100px";
@@ -364,9 +364,9 @@ function fallRight() {
   let isWho = Math.random() > 0.5;
   let fish = document.createElement("img");
   if (isWho) {
-    fish.src = "../images/a-fish-.svg";
+    fish.src = "/images/a-fish-.svg";
   } else {
-    fish.src = "../images/aFishVertical.png";
+    fish.src = "/images/aFishVertical.png";
   }
   fish.className = "fish";
   fish.style.height = "100px";
